@@ -2,13 +2,15 @@
  * @Author: hft
  * @Date: 2021-10-13 15:55:27
  * @LastEditors: hft
- * @LastEditTime: 2021-10-14 16:37:14
+ * @LastEditTime: 2021-10-15 15:13:15
  * @Description: file content
  */
 import React from 'react';
 import './App.css';
-import { appReducer, IAction, payload, returnValue } from './reducer/appReducer';
+import { appReducer, AppAction, payload, returnValue } from './reducer/appReducer';
 import Header from './components/Header';
+import Login from './components/Login';
+import Home from './components/Home';
 
 
 export interface IState {
@@ -38,6 +40,7 @@ function App() {
         }
       })
     }
+    console.log("isAuthenticated",state.isAuthenticated);
   }, [])
   return (
     <AuthContext.Provider
@@ -46,9 +49,9 @@ function App() {
         dispatch
       }}
     >
+      
       <Header />
-      {/* <div className="App">{!state.isAuthenticated ? <Login /> : <Home />}</div> */}
-      <Login />
+      <div className="App">{!state.isAuthenticated ? <Login /> : <Home />}</div>
     </AuthContext.Provider>
   );
 }

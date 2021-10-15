@@ -5,21 +5,21 @@ import { IState } from "../App";
  * @Author: hft
  * @Date: 2021-10-13 17:20:30
  * @LastEditors: hft
- * @LastEditTime: 2021-10-14 15:33:57
+ * @LastEditTime: 2021-10-15 15:08:52
  * @Description: file content
  */
 export interface payload {
     user: string
     token: string
 }
-export interface IAction {
+export interface AppAction {
     type: string
     payload: payload
 
 }
 export interface returnValue {
     payload: payload
-    IAction: IAction
+    IAction: AppAction
 }
 export interface ICache {
     setMyItem(key: string, value: string | any): void;
@@ -28,7 +28,7 @@ export interface ICache {
 
 }
 
-export const appReducer = (state: IState, action: IAction) => {
+export const appReducer = (state: IState, action: AppAction) => {
     switch (action.type) {
         case "LOGIN":
             setMyItem("user", action.payload.user)
