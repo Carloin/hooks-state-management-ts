@@ -7,7 +7,7 @@
 -->
 # 开始项目
 
-原项目看这里 **[Hooks Movie App](https://github.com/samie820/hooks-state-management)**.
+原项目看这里 **[hooks-state-management](https://github.com/samie820/hooks-state-management)**.
 
 
 
